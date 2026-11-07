@@ -46,14 +46,15 @@
   .nav ul { display: flex; align-items: center; gap: 30px; list-style: none; margin: 0; padding: 0; }
   .nav ul a:not(.btn) { text-decoration: none; color: var(--ink); font-size: 16px; }
   .nav ul a:not(.btn):hover { color: var(--brown); text-decoration: underline; text-underline-offset: 4px; }
-  .nav .btn { padding: 13px 30px; }
+  .nav .btn { padding: 13px 30px; white-space: nowrap; }
 
   /* Hero */
   .hero { position: relative; min-height: min(78vh, 680px); display: grid; place-items: center; text-align: center; color: #efe9e3; overflow: hidden; }
   .hero::before { content: ""; position: absolute; inset: 0; background: url("https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=2000&q=75") center 40% / cover; }
   .hero::after { content: ""; position: absolute; inset: 0; background: rgba(78,52,30,.62); }
-  .hero .inner { position: relative; z-index: 1; max-width: 800px; padding: 80px 16px; }
-  .hero h1 { font-size: clamp(36px, 5.2vw, 60px); }
+  .hero .inner { position: relative; z-index: 1; max-width: 1060px; padding: 80px 16px; }
+  .hero h1 + p { max-width: 560px; }
+  .hero h1 { font-size: clamp(36px, 5.2vw, 60px); text-wrap: balance; }
   .hero p { max-width: 560px; margin: 28px auto 0; font-size: 17px; }
 
   /* Ready */
@@ -97,13 +98,20 @@
   .contact p { margin: 18px auto 34px; max-width: 560px; font-size: 16px; }
   .contact .small { margin-top: 26px; font-size: 15px; }
 
+  /* Certification */
+  .cert { background: var(--card); padding: 44px 0; text-align: center; }
+  .cert .label { margin: 0 0 6px; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; }
+  .cert .name { margin: 0; font-family: var(--display); font-weight: 600; font-variation-settings: "SOFT" 100, "WONK" 1; font-size: clamp(22px, 2.4vw, 28px); line-height: 1.2; color: var(--brown); }
+  .cert .org { margin: 6px 0 0; font-size: 16px; }
+  .cert .org a { text-underline-offset: 3px; }
+
   footer { background: var(--brown); color: var(--cream); padding: 30px 0; font-size: 14px; }
   footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 
   /* Phones and small tablets */
   @media (max-width: 860px) {
     .nav ul li:not(:last-child) { display: none; }
-    .logo { font-size: 18px; line-height: 1.2; gap: 8px; }
+    .logo { font-size: 22px; line-height: 1.2; gap: 8px; }
     .logo img { height: 26px; }
     .nav .btn { padding: 10px 18px; font-size: 15px; white-space: nowrap; }
     .ready, .about, .services, .contact { padding: 70px 0; }
@@ -120,7 +128,7 @@
 
 <header>
   <nav class="wrap nav" aria-label="Main">
-    <a class="logo" href="#top"><img src="images/logo.svg" alt="" width="391" height="231">Zoë Reeves Relationship Coaching</a>
+    <a class="logo" href="#top"><img src="images/logo.svg" alt="" width="391" height="231">Zoë Reeves</a>
     <ul>
       <li><a href="#services">Services</a></li>
       <li><a href="#about">About</a></li>
@@ -134,7 +142,7 @@
 <main id="top">
   <section class="hero">
     <div class="inner">
-      <h1>Relationships are one of the most important investments we make in our lives.</h1>
+      <h1>Every couple falls out of step.<br> Strong couples learn how to repair.</h1>
       <p>I specialize in helping couples and individuals navigate the beautiful, messy, and deeply human work of being in relationship — with love, curiosity and honesty.</p>
     </div>
   </section>
@@ -205,6 +213,14 @@
       <!-- BOOKING_LINK: swap mailto:... for your Cal.com link once it's set up -->
       <a class="btn" href="mailto:hello@zoereeves.ca?subject=Discovery%20call">Book a free discovery call</a>
       <p class="small">Prefer to write? Email <a href="mailto:hello@zoereeves.ca">hello@zoereeves.ca</a></p>
+    </div>
+  </section>
+
+  <section class="cert" aria-label="Certification">
+    <div class="wrap">
+      <p class="label">Certified</p>
+      <p class="name">Thriving Relationship Coach</p>
+      <p class="org">through the <a href="https://centerforthrivingrelationships.com/relationship-coach-certification/" target="_blank" rel="noopener">Center for Thriving Relationships</a></p>
     </div>
   </section>
 </main>

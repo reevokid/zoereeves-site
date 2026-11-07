@@ -41,7 +41,8 @@
   /* Header */
   header { position: sticky; top: 0; z-index: 10; background: rgba(214,207,201,.92); backdrop-filter: blur(8px); }
   .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 0; }
-  .logo { font-family: var(--display); font-weight: 600; font-variation-settings: "SOFT" 100, "WONK" 1; font-size: 26px; color: var(--brown); text-decoration: none; }
+  .logo { font-family: var(--display); font-weight: 600; font-variation-settings: "SOFT" 100, "WONK" 1; font-size: 26px; color: var(--brown); text-decoration: none; display: flex; align-items: center; gap: 12px; }
+  .logo img { height: 34px; width: auto; flex: none; }
   .nav ul { display: flex; align-items: center; gap: 30px; list-style: none; margin: 0; padding: 0; }
   .nav ul a:not(.btn) { text-decoration: none; color: var(--ink); font-size: 16px; }
   .nav ul a:not(.btn):hover { color: var(--brown); text-decoration: underline; text-underline-offset: 4px; }
@@ -58,7 +59,7 @@
   /* Ready */
   .ready { padding: 100px 0; }
   .ready .grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 70px; align-items: center; }
-  .ready img { width: 100%; aspect-ratio: 450/478; object-fit: cover; }
+  .ready img { width: 100%; height: auto; aspect-ratio: 450/478; object-fit: cover; }
   .ready h2 { font-size: clamp(34px, 4vw, 48px); color: var(--brown); }
   .ready p { margin: 24px 0 26px; max-width: 560px; font-size: 16px; }
   .ready ul { margin: 0; padding-left: 22px; }
@@ -102,7 +103,8 @@
   /* Phones and small tablets */
   @media (max-width: 860px) {
     .nav ul li:not(:last-child) { display: none; }
-    .logo { font-size: 18px; line-height: 1.2; }
+    .logo { font-size: 18px; line-height: 1.2; gap: 8px; }
+    .logo img { height: 26px; }
     .nav .btn { padding: 10px 18px; font-size: 15px; white-space: nowrap; }
     .ready, .about, .services, .contact { padding: 70px 0; }
     .ready .grid, .about .grid, .services .grid { grid-template-columns: 1fr; gap: 40px; }
@@ -118,7 +120,7 @@
 
 <header>
   <nav class="wrap nav" aria-label="Main">
-    <a class="logo" href="#top">Zoë Reeves Relationship Coaching</a>
+    <a class="logo" href="#top"><img src="images/logo.svg" alt="" width="391" height="231">Zoë Reeves Relationship Coaching</a>
     <ul>
       <li><a href="#services">Services</a></li>
       <li><a href="#about">About</a></li>
@@ -139,7 +141,7 @@
 
   <section class="ready">
     <div class="wrap grid">
-      <img src="https://images.unsplash.com/photo-1756087612307-cc7cb6df5d60?w=1000&q=75" alt="A woman hugging her partner from behind, both smiling">
+      <img src="images/couple.jpg" alt="A woman hugging her partner from behind and kissing his head" width="1000" height="1062">
       <div>
         <h2>Are you ready to do the work?</h2>
         <p>Because meaningful relationships take work. They ask us to look honestly at our own behaviours, take responsibility for our part, and approach both ourselves and our partners with curiosity rather than judgement.</p>

@@ -12,7 +12,7 @@
   /* ===== Things to change =====
      Booking link: search this file for BOOKING_LINK
      Email address: hello@zoereeves.ca
-     Your portrait: images/zoe.webp */
+     Your portrait: images/zoe.jpg */
 
   :root {
     --brown: #5a3a1f;
@@ -128,6 +128,11 @@
   .cert .name { margin: 0; font-family: var(--display); font-weight: 600; font-size: clamp(22px, 2.4vw, 28px); line-height: 1.2; color: var(--brown); }
   .cert .org { margin: 6px 0 0; font-size: 16px; }
   .cert .org a { text-underline-offset: 3px; }
+  .cert .wrap { display: flex; justify-content: center; align-items: center; gap: 20px 40px; }
+  .cert .text { text-align: left; }
+  .cert .badge { flex: none; display: block; transition: transform .2s; }
+  .cert .badge:hover { transform: translateY(-2px); }
+  .cert .badge img { height: 140px; width: auto; }
 
   footer { background: var(--brown); color: var(--cream); padding: 30px 0; font-size: 14px; }
   footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
@@ -149,6 +154,9 @@
     .services-note { margin-top: 40px; }
     .faq { padding: 70px 0; }
     .faq .grid { grid-template-columns: 1fr; gap: 32px; }
+    .cert .wrap { flex-direction: column; }
+    .cert .text { text-align: center; }
+    .cert .badge img { height: 130px; }
   }
 </style>
 </head>
@@ -205,7 +213,7 @@
         <a class="btn btn--ghost" href="#contact">Book a free discovery call</a>
       </div>
       <div class="portrait">
-        <img src="images/zoe.webp" alt="Zoë Reeves, relationship coach, smiling outdoors" width="796" height="999">
+        <img src="images/zoe.jpg" alt="Zoë Reeves, relationship coach, smiling outdoors" width="1000" height="1255">
       </div>
     </div>
   </section>
@@ -304,10 +312,15 @@
 
   <section class="cert" aria-label="Certification">
     <div class="wrap">
-      <p class="label">Certified</p>
-      <p class="name">Thriving Relationship Coach</p>
-      <p class="org">through the <a href="https://centerforthrivingrelationships.com/relationship-coach-certification/" target="_blank" rel="noopener">Center for Thriving Relationships</a></p>
-      <p class="org">Level 1 training in Relational Life Therapy (RLT)</p>
+      <a class="badge" href="https://centerforthrivingrelationships.com/relationship-coach-certification/" target="_blank" rel="noopener">
+        <img src="images/certified-coach-badge.png" width="219" height="280" loading="lazy" alt="Center for Thriving Relationships Certified Coach Graduate">
+      </a>
+      <div class="text">
+        <p class="label">Certified</p>
+        <p class="name">Thriving Relationship Coach</p>
+        <p class="org">through the <a href="https://centerforthrivingrelationships.com/relationship-coach-certification/" target="_blank" rel="noopener">Center for Thriving Relationships</a></p>
+        <p class="org">Level 1 training in Relational Life Therapy (RLT)</p>
+      </div>
     </div>
   </section>
 </main>
